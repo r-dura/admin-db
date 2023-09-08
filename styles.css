@@ -34,16 +34,99 @@
 }
 
 .side-content {
+    display:flex;
     font-size: 16px;
+    gap:15px;
+}
+
+.photo {
+    display: flex;
+    gap:15px;
+}
+
+.photo > img {
+    width: 30px;
+    height: 30px;
+}
+
+img {
+    color: white;
+    width: 22px;
+    height: 21px;
+    opacity: 60%;
+}
+
+a:link {
+    color:white;
+    text-decoration: none;
+    transition: all 0.4s;
+}
+
+a:visited, a:active {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #f0b939;
+    text-decoration: none;
 }
 
 .header {
+    height: 100px;
     background-color: #90BDC0;
-    display: flex;
+    display: grid;
+    grid-template-columns: 5fr 2fr 1fr;
     justify-content: space-between;
+    align-items: center; 
     font-size: 24px;
     border-radius: 10px;
     box-shadow:0px 2px 5px rgba(0, 0, 0, 0.3);
+    grid-template-areas: 
+    "logo search m";
+}
+
+.logo {
+    grid-area:logo;
+}
+
+.menu {
+    grid-area:m;
+    gap:20px;
+}
+
+#divider {
+    width:1px;
+    padding: 0px;
+    height:50px;
+    background-color: rgb(219, 221, 231);
+}
+
+input, input:focus, input:focus:not(:placeholder-shown){
+    text-indent: 10px; 
+    grid-area: search;
+    background-color: rgb(233, 235, 243);
+    border-radius: 30px;
+    border: none;
+    color: var(--dark-text);
+    font-size: 16px;
+    outline: none;
+    padding: 0px;
+    transition: width 0.3s ease-in-out;
+    width: 250px;
+    height: 40px;
+    color: rgb(124, 122, 122);
+    
+}
+
+input:not(:focus):placeholder-shown {
+    background-image: url("fonts/icons/magnify.svg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    border-radius: 30px;
+    height: 40px;
+    width: 40px;
 }
 
 .sidebar {
@@ -69,7 +152,7 @@
     text-align: center;
     border-radius: 10px;
     box-shadow:0px 2px 5px rgba(0, 0, 0, 0.3);
-    transition: all 0.2s;
+    transition: all 0.4s;
     border: 2px solid transparent; 
     min-height: 200px;
 }
@@ -83,7 +166,7 @@
 }
 
 .card:hover {
-    border-color: #b28685;
+    border-color: #f0b939;
     border-style: solid;
 }
 
@@ -99,7 +182,7 @@
 }
 
 .content-header {
-    color: rgb(69, 67, 67);
+    color: #684948;
     padding: 12px;
 }
 
