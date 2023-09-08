@@ -12,9 +12,15 @@
 
 .container {
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1fr 5fr;
     grid-template-areas: 
     "sidebar right";
+    color: white;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
 }
 
 .container div {
@@ -25,7 +31,6 @@
 .right-side {
     grid-area: right;
     background-color: #CFDCD8;
-    height: 100%;
 }
 
 .side-content {
@@ -44,12 +49,12 @@
 .sidebar {
     grid-area: sidebar;
     background-color: #684948;
-    height: 100%;
     font-size: 24px;
 }
 
 .content {
-    display: flex;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
 }
 
 .cards {
@@ -57,34 +62,55 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(auto-fit, 1fr);
     gap: 30px;
-    height: 100%;
 }
 
 .card {
-    background-color: #B3C8CF;
+    background-color: #82bbcf;
     text-align: center;
     border-radius: 10px;
     box-shadow:0px 2px 5px rgba(0, 0, 0, 0.3);
     transition: all 0.2s;
     border: 2px solid transparent; 
+    min-height: 200px;
 }
 
 .menu ul {
-    display: flex;
+    display: grid;
     list-style-type: none;
     font-size: 16px;
     gap:10px;
+    grid-template-columns: 1fr 2fr 2fr;
 }
 
 .card:hover {
-    border-color: #E0C259;
+    border-color: #b28685;
     border-style: solid;
 }
 
 #h-divider {
     background-color: rgb(219, 221, 231);
-    height: 1px;
+    height: 1px; 
+    padding: 0px;
     margin: 10px 0;
+    border:none;
+}
+.sidebar #h-divider {
+    width:95%;
+}
+
+.content-header {
+    color: rgb(69, 67, 67);
+    padding: 12px;
+}
+
+.other-cards {
+    display: flex;
+    flex-direction: column;
+}
+
+.announcement, .trending {
+    display: grid;
+    grid-template-rows: auto;
 }
 
 
